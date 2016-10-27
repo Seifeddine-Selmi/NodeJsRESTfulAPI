@@ -32,7 +32,7 @@ npm install
 To avoid running the node app.js command each change module that restarts the server each update:
 	npm i -S nodemon
 
-	Update scripte in package.json:
+	Update scripts in package.json:
 
 ```
 "scripts": {
