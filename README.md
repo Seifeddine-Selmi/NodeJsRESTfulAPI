@@ -1,6 +1,6 @@
 # NodeJs Restful API with ExpressJS, AngularJS, Bootstrap, Mongoose, MongoJS, MongoDB and Monk
 
-#######################   Init Project   ###############################
+#######################   Init Project 
 
 
 Install bower dependencies
@@ -79,8 +79,8 @@ npm run monk
 http://localhost/
 
 
-#######################   Init Database   ###############################
- // MongoDB
+#######################   Init MongoDB Database   
+
 
  1- Run script mongod.exe
 
@@ -98,6 +98,6 @@ http://localhost/
 
  > db.contactlist.find().pretty()
 
- > db.contactlist.insert([{name:'Selmi', email:'test2@test.com', number:'(111) - 111 - 1111'}, {name:'Seif', email:'seif@selmi.ca', number:'(222) - 222 - 2222'}])
+ > db.contactlist.insert([{name:'Selmi', email:'test2@test.com', number:'(111) - 111 - 1111'}, {name:'Seif', email:'test3@test.com', number:'(222) - 222 - 2222'}])
 
- > db.contactlist.remove({name:'Selmi', email:'test3@test.com', number:'(111) - 111 - 1111'})
+ > db.contactlist.remove({name:'Selmi', email:'test4@test.com', number:'(111) - 111 - 1111'})
