@@ -1,0 +1,27 @@
+{
+  "name": "nodejsRestfulAPI",
+  "description": "nodejs restfull api",
+  "main": "server.js",
+  "authors": [
+    "Seifeddine Selmi"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "restfull",
+    "api"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}

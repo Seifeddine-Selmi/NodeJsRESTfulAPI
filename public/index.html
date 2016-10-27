@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact list Application</title>
+   
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+
+<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+
+    .readonly {
+        border: none;
+        background: none;
+    }
+    input{
+        width: 100%
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+
+  <div class="jumbotron">
+    <h1>Contact list Application</h1> 
+    <p>Contact list Application is the NodeJs Restful API with ExpressJS, AngularJS, Bootstrap, Mongoose, MongoJS, MongoDB and Monk.</p> 
+  </div>
+  
+    <br>
+
+<div ng-controller="AppCtrl">
+    
+   <form name="contactForm">
+
+     <div class="row">
+
+         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+           <input class="form-control" name="name" ng-model="contact.name" placeholder="Name" required> 
+           <!-- 
+           <span ng-show="contactForm.name.$touched && contactForm.name.$invalid" class="text-danger">
+            The name is required.
+          </span>
+
+            -->
+          
+    </div>
+
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+       <input class="form-control" name="email" type="email"  ng-model="contact.email" 
+              placeholder="Email"  required>
+
+       <!-- 
+            <span ng-show="contactForm.email.$touched && contactForm.email.$invalid" class="text-danger">
+        The email is required!
+    </span>
+        -->
+      
+</div>
+
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+       <input class="form-control" name="number" ng-model="contact.number"
+              placeholder="Phone Number" required />
+
+       <!-- 
+     <span ng-show="contactForm.number.$touched && contactForm.number.$invalid" class="text-danger">
+       The phone number is required!
+    </span>
+       -->
+      
+    </div>
+
+          <button class="btn btn-primary" ng-disabled="contactForm.$invalid" ng-click="addcontact()">
+            Add Contact
+          </button>
+    </div>
+
+</form>
+<br>
+<table class="table table-hover table-striped morespecial">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+  
+        <tr ng-repeat="contact in contactlist">
+            <td>
+                <input type="text" ng-model="contact.name" 
+                       class="{{contact.contenteditable ? 'form-control':'readonly'}}"
+                       ng-readonly="!contact.contenteditable" 
+                       ng-value="contact.name"/>
+            </td>
+            <td>
+                <input type="text" ng-model="contact.email" 
+                       class="{{contact.contenteditable ? 'form-control':'readonly'}}"
+                       ng-readonly="!contact.contenteditable" 
+                       ng-value="contact.email"/>
+            </td>
+            <td>
+                <input type="text" ng-model="contact.number" 
+                       class="{{contact.contenteditable ? 'form-control':'readonly'}}"
+                       ng-readonly="!contact.contenteditable" 
+                       ng-value="contact.number"/>
+            </td>
+            <td>
+                <a class="btn {{contact.contenteditable? 'btn-primary':'btn-warning'}}" 
+                   ng-click="edit(contact._id,contact)">
+                    <span class="glyphicon-edit glyphicon"></span>{{contact.contenteditable? 'OK':'Edit'}}
+                </a>
+                <a class="btn btn-danger" ng-click="remove(contact._id,contact)">
+                    <span class="glyphicon glyphicon-remove"></span>Remove
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+</div>
+   
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="Controller/controller.js"></script>
+</body>
+</html>
