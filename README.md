@@ -3,24 +3,26 @@
 #######################   Init Project 
 
 
-Install bower dependencies
-	Bower:
-		1- Navigate to your project
+# Install bower dependencies
 
-		2- bower init (this will generate the bower.json file in your directory)
+```	
+Bower:
+	1- Navigate to your project
 
-		3- To set the path where dependencies will be installed:
-		   Manually create a .bowerrc file next to the bower.json file and add the following to it:
-		   { "directory" : "public/components" }
+	2- bower init (this will generate the bower.json file in your directory)
 
-		4- // Example to add dependencies
-		   bower install bootstrap --save
-		   bower install angular --save
-		   bower install angular-resource --save
-		   bower install angular-route --save
+	3- To set the path where dependencies will be installed:
+	   Manually create a .bowerrc file next to the bower.json file and add the following to it:
+	   { "directory" : "public/components" }
 
+	4- // Example to add dependencies
+	   bower install bootstrap --save
+	   bower install angular --save
+	   bower install angular-resource --save
+	   bower install angular-route --save
 
-Install npm dependencies
+```
+# Install npm dependencies
 
 ```
 npm install
